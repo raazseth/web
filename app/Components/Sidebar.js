@@ -3,7 +3,6 @@ import React from "react";
 import { FaAngleRight } from "react-icons/fa";
 
 const Sidebar = () => {
- 
   const Sidebars = [
     {
       name: "My Profile",
@@ -17,8 +16,13 @@ const Sidebar = () => {
     },
   ];
 
+  const handleLogout = () => {
+    window.localStorage.clear();
+    window.location.href = "/login";
+  };
+
   return (
-    <div className="w-2/12 h-screen p-4 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] sticky top-0">
+    <div className="w-2/12 h-screen p-4 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] sticky top-0 lg:flex flex-col md:hidden hidden">
       {Sidebars.map((sidebar, index) => (
         <Link key={index} href={sidebar.link}>
           <div
@@ -29,6 +33,13 @@ const Sidebar = () => {
           </div>
         </Link>
       ))}
+
+      <div
+        onClick={handleLogout}
+        className="ml-2 mt-[76vh] text-sm font-semibold cursor-pointer text-[red]"
+      >
+        Logout
+      </div>
     </div>
   );
 };
