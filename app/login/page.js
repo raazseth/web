@@ -11,7 +11,7 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Perform validation
+  
     const newErrors = {};
     if (email === "") {
       newErrors.email = "Email is required";
