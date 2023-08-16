@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Input from "../Components/Input";
 import axios from "axios";
 
-const page = () => {
+const Page = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -77,4 +77,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -4,7 +4,7 @@ import Layout from "../Components/Layout";
 import UserCard from "../Components/UserCard";
 import axios from "axios";
 
-export default function page() {
+export default function Page() {
   const [auth, setauth] = useState({});
   const [pageType, setpageType] = useState("Connections");
   const [requests, setrequests] = useState([]);
