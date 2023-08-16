@@ -52,6 +52,7 @@ export default function Page() {
       <div>
         {pageTypes.map((type) => (
           <button
+          key={type}
             onClick={() => setpageType(type)}
             className={`bg-blue-500 hover:bg-blue-600 text-white mt-auto text-[12px] font-[500] h-[32px] mr-2 mb-2 py-1 px-2 rounded-[24px] shadow-md focus:outline-none focus:ring focus:border-blue-500 ${
               pageType === type ? "bg-blue-600" : ""
@@ -62,8 +63,8 @@ export default function Page() {
         ))}
         <div className="flex flex-row flex-wrap min-h-screen py-2">
           {checkPageType() &&
-            checkPageType().map((connection) => (
-              <UserCard connection={connection} auth={auth} />
+            checkPageType().map((connection,i) => (
+              <UserCard connection={connection} key={i} auth={auth} />
             ))}
         </div>
       </div>
